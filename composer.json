@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Depa\\Middleware-MobileDetect\\": "src/"
+            "Depa\\MiddlewareMobileDetect\\": "src/"
         }
     },
     "minimum-stability": "dev",

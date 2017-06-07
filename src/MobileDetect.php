@@ -1,5 +1,5 @@
 <?php
-namespace Depa\Middleware_MobileDetect;
+namespace Depa\MiddlewareMobileDetect;
 
 
 use Psr\Http\Message\ServerRequestInterface;
