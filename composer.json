@@ -1,6 +1,24 @@
 {
+    "name": "depa/Middleware-MobileDetect",
+    "description": ".....",
+    "keywords": ["framework","depa","MobileDetect"],
+    "license": "MIT",
+    "homepage": "https://github.com/depa-berlin/Middleware-MobileDetect",
+    "authors": [
+        {
+            "name": "Mirko Fenrich",
+            "email": "fenrich@designpark.de"
+        }
+    ],
     "require": {
         "mobiledetect/mobiledetectlib": "^2.8",
         "http-interop/http-middleware": "^0.4.1"
-    }
+    },
+    "autoload": {
+        "psr-4": {
+            "Depa\\Middleware-MobileDetect\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
