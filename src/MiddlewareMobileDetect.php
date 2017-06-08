@@ -9,7 +9,7 @@ use Detection\MobileDetect;
 
 
 
-class MobileDetect implements MiddlewareInterface
+class MiddlewareMobileDetect implements MiddlewareInterface
 {
     /**
      * @var MobileDetect
