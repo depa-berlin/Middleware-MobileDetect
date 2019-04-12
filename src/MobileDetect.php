@@ -2,12 +2,11 @@
 namespace Depa\MiddlewareMobileDetect;
 
 
+use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Interop\Http\ServerMiddleware\MiddlewareInterface;
-use Interop\Http\ServerMiddleware\DelegateInterface;
+use Psr\Http\Server\RequestHandlerInterface;
+use Psr\Http\Message\ResponseInterface;
 use Detection\MobileDetect;
-
-
 
 class MobileDetect implements MiddlewareInterface
 {
@@ -23,13 +22,14 @@ class MobileDetect implements MiddlewareInterface
        $this->detector = new MobileDetect();
     }
     
-    
-    
     /**
      * {@inheritDoc}
-     * @see \Interop\Http\ServerMiddleware\MiddlewareInterface::process()
+     *
+     * @param ServerRequestInterface $request
+     * @param RequestHandlerInterface $handler
+     * @return ResponseInterface
      */
-    public function process(ServerRequestInterface $request, DelegateInterface $delegate)
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
        if($this->detector->isMobile()){
            $request->withAttribute('client-isMobile', TRUE);
@@ -44,7 +44,8 @@ class MobileDetect implements MiddlewareInterface
            $request->withAttribute('client-isAndroidOS', TRUE);
        }
 
-        return $delegate->process($request);
+        $response = $handler->handle($request);
+        return $response;
         
     }
 
