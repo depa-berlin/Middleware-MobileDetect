@@ -6,7 +6,7 @@ use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Http\Message\ResponseInterface;
-use Detection\MobileDetect;
+use Detection\MobileDetect; 
 
 class MobileDetect implements MiddlewareInterface
 {
