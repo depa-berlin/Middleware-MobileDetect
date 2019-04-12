@@ -44,8 +44,7 @@ class MobileDetect implements MiddlewareInterface
            $request->withAttribute('client-isAndroidOS', TRUE);
        }
 
-        $response = $handler->handle($request);
-        return $response;
+        return($handler->handle($request));
         
     }
 
